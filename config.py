@@ -9,6 +9,7 @@ class Config:
     COHERE_API_KEY: str = os.environ.get('COHERE_API_KEY', '')
     FINLIGHT_API_KEY: str = os.environ.get('FINLIGHT_API_KEY', '')
     TAVILY_API_KEY: Optional[str] = os.environ.get('TAVILY_API_KEY', None)
+    JINA_API_KEY: Optional[str] = os.environ.get('JINA_API_KEY', None)
     
     # LangSmith Configuration
     LANGSMITH_TRACING: bool = os.environ.get('LANGSMITH_TRACING', 'false').lower() == 'true'

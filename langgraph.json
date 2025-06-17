@@ -1,0 +1,14 @@
+{
+  "dependencies": [
+    "langgraph",
+    "langchain-cohere",
+    "cohere",
+    "finlight-client",
+    "yfinance",
+    "."
+  ],
+  "graphs": {
+    "finance-assistant": "agent.agent:create_graph"
+  },
+  "env": "./.env"
+}

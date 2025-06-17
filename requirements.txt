@@ -13,3 +13,5 @@ langchain_community
 tavily-python
 wikipedia
 finlight-client
+beautifulsoup4
+requests
