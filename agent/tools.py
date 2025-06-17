@@ -1,11 +1,15 @@
-import os
-from langchain_cohere import ChatCohere
+from finlight_client import FinlightApi, ApiConfig
+from finlight_client.models import GetArticlesParams
+from config import config
 
-llm = ChatCohere(model="command-r-plus-v2", cohere_api_key=os.getenv("COHERE_API_KEY"))
-
-def get_summary(prompt: str) -> str:
-    print("Prompt: ", prompt)
-    print("=========================================================")
-    return llm.invoke(prompt).content.strip()
-
-__all__ = ['get_summary']
+def fetch_articles(query: str, language: str = 'en', page_size: int = 5) -> list[dict]:
+    client = FinlightApi(
+        config=ApiConfig(api_key=config.FINLIGHT_API_KEY)
+    )
+    params = GetArticlesParams(
+        query=query,
+        language=language,
+        pageSize=page_size
+    )
+    resp = client.articles.get_basic_articles(params=params)
+    return resp.get('articles', [])
