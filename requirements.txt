@@ -1,0 +1,15 @@
+langgraph
+langgraph-prebuilt
+openai
+yfinance
+python-dotenv
+typing-extensions
+langchain
+cohere
+langchain-openai
+langchain-cohere
+langchain-core
+langchain_community
+tavily-python
+wikipedia
+finlight-client
