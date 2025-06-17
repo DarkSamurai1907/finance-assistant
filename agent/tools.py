@@ -1,5 +1,4 @@
 import requests
-from bs4 import BeautifulSoup
 from finlight_client import FinlightApi, ApiConfig
 from finlight_client.models import GetArticlesParams
 from config import config
@@ -78,7 +77,7 @@ def stock_fundamentals(symbol: str, market: str = "NASDAQ") -> str:
 
     Args:
         symbol: Ticker symbol (e.g. "AAPL", "VBL")
-        market: Market code ("NASDAQ" or "NSE")
+        market: Market code ("NASDAQ" or "NSE"). MAKE SURE TO USE NASDAQ FOR US STOCKS!
 
     Returns:
         Key fundamentals and financial ratios in plain text.
@@ -109,7 +108,7 @@ def stock_technicals(symbol: str, market: str = "NASDAQ") -> str:
 
     Args:
         symbol: Ticker symbol (e.g. "GOOGL", "SAIL")
-        market: Market code ("NASDAQ" or "NSE")
+        market: Market code ("NASDAQ" or "NSE"). MAKE SURE TO USE NASDAQ FOR US STOCKS!
 
     Returns:
         A summary of technical indicators and signals.

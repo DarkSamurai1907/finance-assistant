@@ -11,7 +11,7 @@ if __name__ == '__main__':
     graph = create_graph()
     print('Graph Created!')
 
-    user_msg = HumanMessage(content="How is the tech sector in the US doing today? Tell me about Meta's forecast.")
+    user_msg = HumanMessage(content="How is Tesla stock doing?")
     result = graph.invoke({'messages': [user_msg]})
 
     for msg in result['messages']:
